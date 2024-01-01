@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 import functools
-from typing import Optional, TypedDict, Union
+from typing import Optional, TypedDict, Union, Tuple
 import uuid
 import inspect
 from helicone.globals import helicone_global
@@ -112,7 +112,7 @@ class OpenAIInjector:
             response.raise_for_status()
         return response.json()
 
-    def _pull_out_meta(self, **kwargs) -> tuple[HeliconeProxyMeta, dict]:
+    def _pull_out_meta(self, **kwargs) -> Tuple[HeliconeProxyMeta, dict]:
         if ("heliconeMeta" in kwargs and isinstance(kwargs["heliconeMeta"], HeliconeProxyMeta)):
             return kwargs.pop("heliconeMeta"), kwargs
 
