@@ -1,0 +1,77 @@
+---
+title: "Overview"
+description: "Leverage custom segments to gain insights into costs and user behavior"
+---
+
+Utilizing [Custom Properties](features/advanced-usage/custom-properties), you have the ability to segment your data in a multitude of ways. This powerful technique allows you to comprehend the costs and behavior of distinct user groups, thereby informing strategic decisions and optimizations.
+
+In this document, we will outline some recommended methods for data segmentation, supplemented with illustrative examples.
+
+## Tracking Environments in Helicone
+
+Many organizations utilize multiple environments, such as development, staging, and production. To distinguish between these environments, you can create a `Helicone-Property-Environment` property. In the example below, we assign the property "development" to the environment:
+
+```python
+openai.Completion.create(
+    # ...
+    headers={
+        "Helicone-Property-Environment": "development",
+    }
+)
+```
+
+![](/images/environment-cp/1.png)
+![](/images/environment-cp/2.png)
+![](/images/environment-cp/3.png)
+![](/images/environment-cp/4.png)
+
+## Example of Data Segmentation
+
+A prevalent method of data segmentation is by user type. For example, you might want to distinguish between paying and free users to gain a deeper understanding of their respective behaviors and associated costs.
+
+To accomplish this, you can create a `user_type` property. In the example below, we assign the property "free" to the user type:
+
+```python
+openai.Completion.create(
+    # ...
+    headers={
+        "Helicone-Property-User-Type": "free",
+    }
+)
+```
+
+Data segmentation becomes increasingly potent when you amalgamate it with other properties. Suppose you wish to comprehend the behavior of paying users when they utilize a specific feature, such as spell check. You can achieve this by adding another property, as shown below:
+
+```python
+openai.Completion.create(
+    # ...
+    headers={
+        "Helicone-Property-User-Type": "paid",
+        "Helicone-Property-Feature": "spellcheck",
+    }
+)
+```
+
+With the capability to add an unlimited number of custom properties, you can create highly detailed segments. The following example incorporates additional properties for plan type and job ID:
+
+```python
+openai.Completion.create(
+    # ...
+    headers={
+        "Helicone-Property-User-Type": "paid",
+        "Helicone-Property-Feature": "spellcheck",
+        "Helicone-Property-Plan": "enterprise",
+        "Helicone-Property-Job-UUID": "1234-5678-9012-3456",
+    }
+)
+```
+
+## Analyzing Segmented Data
+
+After segmenting your data, you can scrutinize it to derive insights. For instance, you might discover that your free users are utilizing the spellcheck feature more than your paid users. This could signify an opportunity to market this feature more aggressively within your premium plans.
+
+## Additional Properties for Enhanced Segmentation
+
+You can refine your segments further by incorporating other properties such as location (`Helicone-Property-Location`), device type (`Helicone-Property-Device-Type`), or user activity level (`Helicone-Property-Activity-Level`). Bear in mind that the more detailed your segments, the more focused your analysis can be, leading to more accurate insights.
+
+Remember, the key is to select properties that best align with your objectives and that will yield valuable insights upon analysis. Happy segmenting!

@@ -1,0 +1,157 @@
+{
+  "name": "Helicone",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "favicon": "/favicon.webp",
+  "colors": {
+    "primary": "#4BA3E3",
+    "light": "#4BA3E3",
+    "dark": "#4BA3E3"
+  },
+  "modeToggle": {
+    "default": "light"
+  },
+  "topbarCtaButton": {
+    "name": "Sign In",
+    "url": "https://www.helicone.ai/#:~:text=Discord-,Sign,-In"
+  },
+  "anchors": [
+    {
+      "name": "Community",
+      "icon": "discord",
+      "url": "https://discord.com/invite/zsSTcH2qhG"
+    },
+    {
+      "name": "GitHub",
+      "icon": "github",
+      "url": "https://github.com/helicone/helicone"
+    }
+  ],
+  "tabs": [
+    {
+      "name": "Use Cases",
+      "url": "use-cases"
+    }
+  ],
+  "feedback": {
+    "suggestEdit": true,
+    "raiseIssue": true
+  },
+  "navigation": [
+    {
+      "group": "Welcome",
+      "pages": ["introduction", "overview"]
+    },
+    {
+      "group": "CI/CD",
+      "pages": ["use-cases/github-actions"]
+    },
+    {
+      "group": "Custom Properties",
+      "pages": ["use-cases/segmentation", "use-cases/environment-tracking"]
+    },
+    {
+      "group": "Developer",
+      "pages": [
+        "use-cases/debugging",
+        "use-cases/etl",
+        "use-cases/data-autonomy"
+      ]
+    },
+    {
+      "group": "Getting Started",
+      "pages": [
+        "getting-started/quick-start",
+        "getting-started/proxy-vs-async",
+        "getting-started/self-deploy",
+        "getting-started/self-deploy-cloud",
+        "getting-started/self-deploy-docker"
+      ]
+    },
+    {
+      "group": "Integrations",
+      "pages": [
+        "getting-started/integration-method/gateway",
+        "getting-started/integration-method/gateway-fallbacks",
+        {
+          "group": "Proxy",
+          "pages": [
+            "getting-started/integration-method/openai-proxy",
+            "getting-started/integration-method/anthropic",
+            "getting-started/integration-method/azure",
+            "getting-started/integration-method/anyscale"
+          ]
+        },
+        {
+          "group": "Async",
+          "pages": [
+            "getting-started/integration-method/openai",
+            "getting-started/integration-method/litellm"
+          ]
+        },
+        "getting-started/integration-method/custom"
+      ]
+    },
+    {
+      "group": "Helicone Headers",
+      "pages": [
+        "helicone-headers/intro",
+        "helicone-headers/predefining-request-id"
+      ]
+    },
+    {
+      "group": "Features",
+      "pages": [
+        {
+          "group": "Jobs",
+          "pages": ["features/jobs/quick-start", "features/jobs/example"]
+        },
+        "features/advanced-usage/custom-properties",
+        "features/advanced-usage/user-metrics",
+        "features/advanced-usage/feedback",
+        "features/advanced-usage/vault",
+        "features/advanced-usage/templated-prompts",
+        "features/advanced-usage/caching",
+        "features/advanced-usage/retries",
+        "features/advanced-usage/custom-rate-limits",
+        "features/advanced-usage/omit-logs",
+        "features/streaming",
+        "features/webhooks"
+      ]
+    },
+    {
+      "group": "Tools",
+      "pages": ["tools/mitm-proxy", "tools/export"]
+    },
+    {
+      "group": "GraphQL API",
+      "pages": ["graphql/getting-started", "graphql/python-example"]
+    },
+    {
+      "group": "FAQ",
+      "pages": [
+        "faq/how-encryption-works",
+        "faq/latency-affect",
+        "faq/how-we-calculate-cost"
+      ]
+    }
+  ],
+  "topbarLinks": [
+    {
+      "name": "Discord",
+      "url": "https://discord.com/invite/zsSTcH2qhG"
+    },
+    {
+      "name": "Github",
+      "url": "https://github.com/Helicone/helicone"
+    }
+  ],
+  "footerSocials": {
+    "twitter": "https://twitter.com/helicone_ai",
+    "linkedin": "https://www.linkedin.com/company/helicone/about/",
+    "github": "https://github.com/Helicone/helicone",
+    "discord": "https://discord.com/invite/zsSTcH2qhG"
+  }
+}
