@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 import functools
-from typing import Optional, TypedDict, Union
+from typing import Optional, TypedDict, Union, Tuple
 import uuid
 import inspect
 from rapida.globals import rapida_global
@@ -112,7 +112,7 @@ class OpenAIInjector:
             response.raise_for_status()
         return response.json()
 
-    def _pull_out_meta(self, **kwargs) -> tuple[RapidaProxyMeta, dict]:
+    def _pull_out_meta(self, **kwargs) -> Tuple[RapidaProxyMeta, dict]:
         if ("rapidaMeta" in kwargs and isinstance(kwargs["rapidaMeta"], RapidaProxyMeta)):
             return kwargs.pop("rapidaMeta"), kwargs
 
